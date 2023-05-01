@@ -1,0 +1,384 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    /* Below code is for obacity of 70% on the image */
+
+    /* The fourth parameter, alpha, represents the opacity or transparency of the color and can have a value between 0 and 1, with 0 being completely transparent and 1 being completely opaque */
+
+    background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),  url(../images/header-image.png);
+
+    /* For using opacity: we cans aslo use our previous method using ::before */
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+
+    /* Setting position as relative remeber we will use it later in other elements  */
+
+    position: relative;
+}
+
+/* ----------------------Navigation-------------------- */
+
+nav{
+    display: flex;
+    align-items: center;
+
+    /* We want equal space between logo and those buttons that why we have used justify-content: space-between; */
+
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.logo{
+    width: 150px;
+    cursor: pointer;
+}
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;    /* To get space between both the buttons */
+    cursor: pointer;
+}
+.language-btn{
+
+    /* The inline-flex value combines the behavior of the inline and flex values. It allows the element to behave as an inline-level element, meaning it will not start on a new line and can be placed alongside other inline-level elements.
+
+    At the same time, it also allows the element to have flexible properties, such as flex-direction, flex-wrap, and justify-content, allowing it to control the layout of its child elements, similarly to a flex container. */
+
+    display: inline-flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid white;
+    padding: 7px 10px;
+}
+.language-btn img{
+    width: 10px;
+    /* To create space between the text and the button */
+    margin-left: 10px;
+}
+
+.header-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    /* transform: translate(-50%,-50%); is a CSS property that uses the translate() function of the transform property to move an element horizontally and vertically by a certain percentage, relative to its own size.
+
+    The translate() function allows you to move an element along the X and/or Y axes, and optionally the Z axis in 3D space. In this case, the first parameter -50% is used to move the element 50% of its own width to the left, while the second parameter -50% is used to move it 50% of its own height upwards. This centers the element both horizontally and vertically within its parent container.
+
+    This property is often used in combination with position: absolute or position: fixed to center an element within its parent container, regardless of the element's size or the size of the container. */
+
+
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 100px;
+}
+.header-content h1{
+    font-size: 60px;
+    line-height: 70px;
+
+    /* font-weight: 600; is a CSS property that sets the thickness or boldness of the text characters within an element.
+
+    The font-weight property can accept a range of values from 100 to 900, with 400 being the normal (or regular) weight, and 700 being the bold weight. In this case, a value of 600 is used, which is between normal and bold, indicating a semi-bold weight. */
+
+    font-weight: 600;
+
+    /* In this case, the maximum width of the element is set to 650 pixels, meaning that the element can have a width that is less than or equal to 650 pixels, but not greater than that. If the element's content is narrower than 650 pixels, the element's width will be determined by its content. However, if the element's content is wider than 650 pixels, the element's width will be capped at 650 pixels, and the content may overflow or wrap to the next line. */
+
+    max-width: 650px;
+}
+.header-content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.email-signup{
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    margin-top: 30px;
+    overflow: hidden;
+}
+.email-signup input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+ 
+}
+.email-signup button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+
+    /* To increase the height of the input form */
+    padding: 15px 30px;
+}
+
+/* -------------------Features-------------------- */
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    /* To make it responsive to wrap over each other so that it will look good on mobile also, we use wrap argument in flex-wrap */
+
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.text-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+}
+.img-col img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+.features h2{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* -------------------FAQ---------------------- */
+.faq{
+    padding: 10px 12%;
+
+    /* We can even use  text-align: center; to centre any image in a container horix=zontally. Note that we not used  text-align: center; here to centre any image  */
+
+    text-align: center;
+    font-size: 18px;
+}
+.faq h2{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+/* ---------------------Accordian-------------------- */
+
+.accordian{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+}
+
+.accordian li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordian li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor:pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+
+    /* right: 20px; is a CSS property that sets the distance between the right edge of an element and the right edge of its containing element.
+
+    This property is commonly used to position an element to the right of its container. In this case, a value of 20px is used, meaning that the element is positioned 20 pixels from the right edge of its containing element.
+
+    It's worth noting that this property only applies to elements that have a position value other than static, such as position: relative; or position: absolute;. When an element has a position value of static, the right property has no effect. */
+
+    right: 20px;
+    /* For transition of + icon  */
+    transition: transform 0.5s;
+    /* Using tarnsform we add roate, scale etc transitions */
+}
+
+/* To hide the radio icon of the list */
+
+input[type='radio']{
+    display: none;
+}
+.accordian .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+
+    /* As maximum height is 0 therefore it will be hidden */
+
+    max-height: 0;
+    overflow: hidden;
+    /* To add transition while clicking on the accordian */
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+/* .accordian is a class selector, used to target elements with the class "accordian".
+
+input[type='radio'] is an attribute selector, used to select input elements with the type "radio".
+
+:checked is a pseudo-class selector, used to select radio inputs that are currently checked.
+
++ is a combinator selector, used to select the next sibling element that immediately follows the checked radio input.
+
+label is an element selector, used to select label elements that follow the checked radio input.
+
+.content is a class selector, used to select elements with the class "content" that follow the label.
+
+So, when a radio input of type "radio" within an element with class "accordian" is checked, this code selects the next sibling label element followed by an element with class "content" and applies the styles of max-height: 600px and padding: 30px 20px. This is typically used to create an accordion-style menu, where clicking a radio button reveals additional content associated with that button. */
+
+/* The + selector in CSS is called the adjacent sibling combinator, and it selects the element that immediately follows another element and shares the same parent. */
+
+.accordian input[type='radio']:checked+label+.content
+{
+    max-height: 600px;  /* To make it visible */
+    padding: 30px 20px;
+
+}
+
+.accordian input[type='radio']:checked+label::after
+{
+    transform: rotate(135deg);
+}
+.faq .email-signup{
+    max-width: 600px;
+    margin: 20px auto 60px;
+} 
+.faq small{
+    font-size: 13px;
+}
+
+/* ------------------------------Footer---------------------------------- */
+
+.footer{
+    /* Top/Right-Left/Bottom */
+    padding: 50px 15% 10px;
+    /* To get a line at the top of the foooter */
+    border-top: 6px solid #333;
+    color: #777;
+}
+
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.footer .col a{
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.footer .row{
+    align-items: flex-start;
+    padding: 10px 0;
+}
+.footer .language-btn{
+    color: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+
+.Copyright-text{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* -------------------------Media Quary----------------------------------- */
+
+@media only screen and (max-width: 600px){
+
+.logo{
+    width: 100px;
+}
+nav button{
+    padding: 5px 10px;
+}
+nav .language-btn{
+    padding: 4px 8px;
+}
+
+/* The below code sets the position property to "unset", which resets any previously applied position property value, and sets the transform property to "none", which means that no transformation will be applied to the element. It also adds a padding-top of 150 pixels to the element, which creates some space between the top edge of the element and its content. */
+
+.header-content{
+    position: unset;
+    transform: none;
+    padding-top: 150px;
+}
+.header-content h1{
+    font-size: 30px;
+}
+.email-signup button{
+    font-size: 12px;
+    padding: 10px 15px;
+}
+.text-col, .img-col{
+    flex-basis: 100%;
+}
+.features h2{
+    font-size: 30px;
+}
+.features p{
+    font-size: 15px;
+}
+/* For getting the alternate order of the images and text of features  */
+.row:nth-child(2), .row:nth-child(4){
+    flex-direction: column-reverse;
+}
+.features .row{
+    padding: 10px 0;
+}
+.faq h2{
+    font-size: 20px;
+}
+.accordian .content{
+    font-size: 14px;
+}
+.accordian li label{
+    padding: 10px;
+    font-size: 14px;
+}
+/* To decrease the size of the + icon */
+label::after{
+    font-size: 22px;
+}
+
+}
